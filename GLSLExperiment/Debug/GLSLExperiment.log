@@ -1,0 +1,78 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  InitShader.cpp
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'InitShader.cpp')
+  
+  example1.cpp
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+  Generating Code...
+example1.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  GLSLExperiment.vcxproj -> D:\Đồ họa máy tính\BaiTHso3_2_project_Cube\Debug\GLSLExperiment.exe
