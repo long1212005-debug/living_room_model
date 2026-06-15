@@ -1,0 +1,8 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  example1.cpp
+C:\Users\Phong\Pictures\living_room_model-main\GLSLExperiment\example1.cpp(1199,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Phong\Pictures\living_room_model-main\GLSLExperiment\example1.cpp(1199,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Phong\Pictures\living_room_model-main\GLSLExperiment\example1.cpp(1209,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Phong\Pictures\living_room_model-main\GLSLExperiment\example1.cpp(1209,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Phong\Pictures\living_room_model-main\GLSLExperiment\example1.cpp(1223,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GLSLExperiment.vcxproj -> C:\Users\Phong\Pictures\living_room_model-main\Debug\GLSLExperiment.exe
