@@ -1,8 +1,20 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   example1.cpp
-C:\Users\Phong\Pictures\livingroom\GLSLExperiment\example1.cpp(1312,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Phong\Pictures\livingroom\GLSLExperiment\example1.cpp(1312,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Phong\Pictures\livingroom\GLSLExperiment\example1.cpp(1322,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Phong\Pictures\livingroom\GLSLExperiment\example1.cpp(1322,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Phong\Pictures\livingroom\GLSLExperiment\example1.cpp(1336,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  GLSLExperiment.vcxproj -> C:\Users\Phong\Pictures\livingroom\Debug\GLSLExperiment.exe
+D:\ĐHMT\GLSLExperiment\mat.h(581,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\ĐHMT\GLSLExperiment\mat.h(770,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\ĐHMT\GLSLExperiment\mat.h(777,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\ĐHMT\GLSLExperiment\mat.h(784,5): warning C4566: character represented by universal-character-name '\u0110' cannot be represented in the current code page (1252)
+  (compiling source file 'example1.cpp')
+  
+D:\ĐHMT\GLSLExperiment\example1.cpp(1327,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\ĐHMT\GLSLExperiment\example1.cpp(1327,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\ĐHMT\GLSLExperiment\example1.cpp(1337,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\ĐHMT\GLSLExperiment\example1.cpp(1337,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\ĐHMT\GLSLExperiment\example1.cpp(1351,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GLSLExperiment.vcxproj -> D:\ĐHMT\Debug\GLSLExperiment.exe

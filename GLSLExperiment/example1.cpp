@@ -678,51 +678,66 @@ void drawBookshelf()
     drawCube(x + 0.16f, 2.78f, z, 0.22f, 0.14f, 0.16f, greenColor());
 }
 
-// ======================= DONG HO KHONG SO =======================
+// ======================= DONG HO TREO TUONG CHUAN =======================
 
 void drawClock()
 {
     float cx = 2.10f;
     float cy = 2.65f;
-    float zf = 0.08f;
 
+    // 1. Khung gỗ nền vuông (Đặt sát bề mặt tường sau z = 0.0f)
+    // Tâm đặt tại z = 0.04f, dày sz = 0.08f -> Mặt trước khung gỗ nhô ra đến z = 0.08f
+    float z_frame = 0.04f;
+    drawCube(cx, cy, z_frame, 1.05f, 1.05f, 0.08f, color4(0.78f, 0.62f, 0.40f, 1.0f));
+
+    // 2. Mặt đồng hồ tròn/vuông màu trắng đè lên khung gỗ
+    // Đẩy tâm ra z = 0.09f, dày sz = 0.02f -> Mặt trước nhô ra đến z = 0.10f
+    float z_face = 0.09f;
+    drawCube(cx, cy, z_face, 0.86f, 0.86f, 0.02f, color4(0.88f, 0.84f, 0.72f, 1.0f));
+
+    // Tính toán góc quay kim theo thời gian thực (gameHour)
     int hour = (int)gameHour;
     float minute = (gameHour - hour) * 60.0f;
-
     float minuteAngle = minute * 6.0f;
     float hourAngle = (hour % 12) * 30.0f + minute * 0.5f;
 
-    drawCube(cx, cy, zf, 1.05f, 1.05f, 0.08f, color4(0.78f, 0.62f, 0.40f, 1.0f));
-    drawCube(cx, cy, 0.03f, 0.86f, 0.86f, 0.03f, color4(0.88f, 0.84f, 0.72f, 1.0f));
-
+    // 3. Vẽ 12 vạch số chia giờ nhô hẳn lên trên mặt trắng (Đặt tại z = 0.11f)
+    // Bán kính vòng vạch số thu gọn về mức 0.33f để nằm gọn trong mặt trắng 0.86f
+    float z_ticks = 0.11f;
     for (int i = 0; i < 12; i++) {
         float ang = (90.0f - i * 30.0f) * PI / 180.0f;
-        float rx = cx + cos(ang) * 0.68f;
-        float ry = cy + sin(ang) * 0.68f;
+        float rx = cx + cos(ang) * 0.33f;
+        float ry = cy + sin(ang) * 0.33f;
 
         if (i % 3 == 0) {
-            drawCube(rx, ry, 0.05f, 0.10f, 0.10f, 0.025f, blackColor());
+            // Các vạch chính: 12h, 3h, 6h, 9h (Kích thước rõ nét)
+            drawCube(rx, ry, z_ticks, 0.06f, 0.06f, 0.015f, blackColor());
         }
         else {
-            drawCube(rx, ry, 0.05f, 0.06f, 0.06f, 0.025f, color4(0.28f, 0.22f, 0.16f, 1.0f));
+            // Các vạch giờ phụ lẻ
+            drawCube(rx, ry, z_ticks, 0.03f, 0.03f, 0.015f, color4(0.28f, 0.22f, 0.16f, 1.0f));
         }
     }
 
-    drawCube(cx, cy, 0.015f, 0.12f, 0.12f, 0.04f, blackColor());
+    // 4. Chốt tròn định vị tâm kim (Đặt tại z = 0.12f)
+    float z_pin = 0.12f;
+    drawCube(cx, cy, z_pin, 0.06f, 0.06f, 0.03f, blackColor());
 
+    // 5. Tính ma trận biến đổi và vẽ KIM GIỜ (Tịnh tiến trục Z đến 0.13f để nằm ngoài cùng)
     mat4 hourHand =
-        Translate(cx, cy, 0.01f) *
+        Translate(cx, cy, 0.13f) *
         RotateZ(-hourAngle) *
-        Translate(0.0f, 0.16f, 0.0f) *
-        Scale(0.055f, 0.34f, 0.025f);
+        Translate(0.0f, 0.11f, 0.0f) * // Chiều dài kim 0.22 -> Tịnh tiến một nửa để gốc kim nằm đúng tâm trục xoay
+        Scale(0.04f, 0.22f, 0.015f);
 
     drawCubeModel(hourHand, blackColor());
 
+    // 6. Tính ma trận biến đổi và vẽ KIM PHÚT (Tịnh tiến ra z = 0.145f để không bị chồng lấn/loạn màu với kim giờ)
     mat4 minuteHand =
-        Translate(cx, cy, 0.0f) *
+        Translate(cx, cy, 0.145f) *
         RotateZ(-minuteAngle) *
-        Translate(0.0f, 0.24f, 0.0f) *
-        Scale(0.035f, 0.50f, 0.02f);
+        Translate(0.0f, 0.16f, 0.0f) * // Chiều dài kim 0.32 -> Tịnh tiến 0.16
+        Scale(0.025f, 0.32f, 0.012f);
 
     drawCubeModel(minuteHand, color4(0.12f, 0.12f, 0.12f, 1.0f));
 }
