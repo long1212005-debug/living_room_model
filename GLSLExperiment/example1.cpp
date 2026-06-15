@@ -499,93 +499,152 @@ void drawCoffeeTable()
 
 void drawTVArea()
 {
-    // Khung ke TV
-    drawCube(7.0f, 0.72f, 0.52f, 3.25f, 0.16f, 0.78f, wood2());
-    drawCube(7.0f, 0.18f, 0.52f, 3.25f, 0.16f, 0.78f, darkWood());
-    drawCube(7.0f, 0.45f, 0.18f, 3.25f, 0.55f, 0.12f, color4(0.30f, 0.17f, 0.08f, 1.0f));
 
-    drawCube(5.35f, 0.45f, 0.52f, 0.12f, 0.55f, 0.78f, darkWood());
-    drawCube(8.65f, 0.45f, 0.52f, 0.12f, 0.55f, 0.78f, darkWood());
+    //  Kệ TV
 
-    drawCube(6.45f, 0.45f, 0.52f, 0.08f, 0.50f, 0.72f, darkWood());
-    drawCube(7.55f, 0.45f, 0.52f, 0.08f, 0.50f, 0.72f, darkWood());
+    mat4 tvCabinet = Translate(7.0f, 0.0f, 0.0f);
 
-    drawCube(5.90f, 0.45f, 0.92f, 0.85f, 0.42f, 0.08f, color4(0.58f, 0.32f, 0.14f, 1.0f));
-    drawCube(8.10f, 0.45f, 0.92f, 0.85f, 0.42f, 0.08f, color4(0.58f, 0.32f, 0.14f, 1.0f));
+    // Mặt trên
+    drawCubeModel(
+        tvCabinet *
+        Translate(0.0f, 0.72f, 0.52f) *
+        Scale(3.25f, 0.16f, 0.78f),
+        wood2()
+    );
 
-    drawCube(7.00f, 0.45f, 0.56f, 0.96f, 0.48f, 0.42f, color4(0.22f, 0.12f, 0.06f, 1.0f));
+    // Mặt dưới
+    drawCubeModel(
+        tvCabinet *
+        Translate(0.0f, 0.18f, 0.52f) *
+        Scale(3.25f, 0.16f, 0.78f),
+        darkWood()
+    );
 
-    // drawerOffset = 0 => dong sat vao ke
-    // drawerOffset > 0 => keo ra
-    float dz = drawerOffset;
+    // Hậu kệ
+    drawCubeModel(
+        tvCabinet *
+        Translate(0.0f, 0.45f, 0.18f) *
+        Scale(3.25f, 0.55f, 0.12f),
+        color4(0.30f, 0.17f, 0.08f, 1.0f)
+    );
 
-    // Day ngan keo
-    drawCube(
-        7.00f, 0.28f, 0.72f + dz,
-        0.82f, 0.06f, 0.42f,
+    // Vách trái
+    drawCubeModel(
+        tvCabinet *
+        Translate(-1.65f, 0.45f, 0.52f) *
+        Scale(0.12f, 0.55f, 0.78f),
+        darkWood()
+    );
+
+    // Vách phải
+    drawCubeModel(
+        tvCabinet *
+        Translate(1.65f, 0.45f, 0.52f) *
+        Scale(0.12f, 0.55f, 0.78f),
+        darkWood()
+    );
+    // Cửa trái
+    drawCubeModel(
+        tvCabinet *
+        Translate(-1.05f, 0.45f, 0.92f) *
+        Scale(1.10f, 0.42f, 0.08f),
+        color4(0.58f, 0.32f, 0.14f, 1.0f)
+    );
+
+    // Cửa phải
+    drawCubeModel(
+        tvCabinet *
+        Translate(1.05f, 0.45f, 0.92f) *
+        Scale(1.10f, 0.42f, 0.08f),
+        color4(0.58f, 0.32f, 0.14f, 1.0f)
+    );
+
+    //  Ngăn kéo
+
+    mat4 drawer =
+        tvCabinet *
+        Translate(0.0f, 0.0f, drawerOffset);
+
+    // Đáy
+    drawCubeModel(
+        drawer *
+        Translate(0.0f, 0.28f, 0.72f) *
+        Scale(0.82f, 0.06f, 0.42f),
         color4(0.48f, 0.28f, 0.12f, 1.0f)
     );
 
-    // Thanh trai
-    drawCube(
-        6.60f, 0.45f, 0.72f + dz,
-        0.06f, 0.28f, 0.42f,
+    // Thành trái
+    drawCubeModel(
+        drawer *
+        Translate(-0.40f, 0.45f, 0.72f) *
+        Scale(0.06f, 0.28f, 0.42f),
         color4(0.56f, 0.34f, 0.16f, 1.0f)
     );
 
-    // Thanh phai
-    drawCube(
-        7.40f, 0.45f, 0.72f + dz,
-        0.06f, 0.28f, 0.42f,
+    // Thành phải
+    drawCubeModel(
+        drawer *
+        Translate(0.40f, 0.45f, 0.72f) *
+        Scale(0.06f, 0.28f, 0.42f),
         color4(0.56f, 0.34f, 0.16f, 1.0f)
     );
 
-    // Thanh sau
-    drawCube(
-        7.00f, 0.45f, 0.50f + dz,
-        0.82f, 0.28f, 0.06f,
+    // Thành sau
+    drawCubeModel(
+        drawer *
+        Translate(0.0f, 0.45f, 0.50f) *
+        Scale(0.82f, 0.28f, 0.06f),
         color4(0.56f, 0.34f, 0.16f, 1.0f)
     );
 
-    // Mat truoc ngan keo 
-    drawCube(
-        7.00f, 0.45f, 0.96f + dz,
-        0.98f, 0.42f, 0.08f,
+    // Mặt trước
+    drawCubeModel(
+        drawer *
+        Translate(0.0f, 0.45f, 0.96f) *
+        Scale(0.98f, 0.42f, 0.08f),
         color4(0.78f, 0.52f, 0.28f, 1.0f)
     );
 
-    // Tay nam
-    drawCube(
-        7.00f, 0.45f, 1.02f + dz,
-        0.20f, 0.06f, 0.03f,
+    // Tay nắm
+    drawCubeModel(
+        drawer *
+        Translate(0.0f, 0.45f, 1.02f) *
+        Scale(0.20f, 0.06f, 0.03f),
         color4(0.86f, 0.74f, 0.48f, 1.0f)
     );
 
-    // TV
-    if (tvOn) {
-        drawCube(7.0f, 1.65f, 0.22f, 2.25f, 1.22f, 0.08f, color4(0.08f, 0.28f, 0.70f, 1.0f));
-    }
-    else {
-        drawCube(7.0f, 1.65f, 0.22f, 2.25f, 1.22f, 0.08f, blackColor());
-    }
+    // =========================
+    // Node con: TV
+    // =========================
+    mat4 tv =
+        tvCabinet *
+        Translate(0.0f, 1.65f, 0.30f);
 
-   
+    drawCubeModel(
+        tv *
+        Scale(2.25f, 1.22f, 0.08f),
+        tvOn ?
+        color4(0.08f, 0.28f, 0.70f, 1.0f)
+        : blackColor()
+    );
 
     // Chân trái
-    mat4 leftLeg =
-        Translate(6.90f, 0.9f, 0.22f) *
+    drawCubeModel(
+        tv *
+        Translate(-0.10f, -0.75f, 0.0f) *
         RotateZ(-30.0f) *
-        Scale(0.06f, 0.40f, 0.06f);
-
-    drawCubeModel(leftLeg, blackColor());
+        Scale(0.06f, 0.40f, 0.06f),
+        blackColor()
+    );
 
     // Chân phải
-    mat4 rightLeg =
-        Translate(7.10f, 0.9f, 0.22f) *
+    drawCubeModel(
+        tv *
+        Translate(0.10f, -0.75f, 0.0f) *
         RotateZ(30.0f) *
-        Scale(0.06f, 0.40f, 0.06f);
-
-    drawCubeModel(rightLeg, blackColor());
+        Scale(0.06f, 0.40f, 0.06f),
+        blackColor()
+    );
 }
 
 // ======================= TU SACH =======================
@@ -672,83 +731,137 @@ void drawClock()
 
 void drawCornerPlant()
 {
-    float x = 9.05f;
-    float z = 0.82f;
-
-    // ===== Chậu cây =====
-
-    // Đế
-    drawCube(x, 0.18f, z,
-        0.55f, 0.12f, 0.55f,
-        color4(0.75f, 0.70f, 0.62f, 1.0f));
-
-    // Thân chậu
-    drawCube(x, 0.42f, z,
-        0.45f, 0.36f, 0.45f,
-        creamPot());
-
-    // Miệng chậu loe
-    drawCube(x, 0.62f, z,
-        0.55f, 0.08f, 0.55f,
-        color4(0.88f, 0.82f, 0.72f, 1.0f));
-
-    // Đất
-    drawCube(x, 0.66f, z,
-        0.42f, 0.05f, 0.42f,
-        color4(0.20f, 0.12f, 0.06f, 1.0f));
-
-    // ===== Thân cây =====
-
-    drawCube(x, 1.05f, z,
-        0.14f, 0.90f, 0.14f,
-        color4(0.42f, 0.24f, 0.10f, 1.0f));
-
-    // ===== Tán lá dưới =====
-    drawCube(x, 1.30f, z,
-        1.00f, 0.28f, 0.60f,
-        greenColor2());
-
-    drawCube(x - 0.45f, 1.22f, z,
-        0.40f, 0.24f, 0.40f,
-        greenColor());
-
-    drawCube(x + 0.45f, 1.22f, z,
-        0.40f, 0.24f, 0.40f,
-        greenColor());
-
-    drawCube(x, 1.22f, z - 0.42f,
-        0.40f, 0.24f, 0.40f,
-        greenColor());
-
-    drawCube(x, 1.22f, z + 0.42f,
-        0.40f, 0.24f, 0.40f,
-        greenColor());
+    mat4 plant = Translate(9.05f, 0.0f, 0.82f);
 
 
-    // ===== Tán lá giữa =====
-    drawCube(x, 1.55f, z,
-        0.85f, 0.26f, 0.55f,
-        greenColor2());
+    //  Chậu 
 
-    drawCube(x - 0.30f, 1.50f, z + 0.12f,
-        0.35f, 0.20f, 0.35f,
-        greenColor());
+    drawCubeModel(
+        plant *
+        Translate(0.0f, 0.18f, 0.0f) *
+        Scale(0.55f, 0.12f, 0.55f),
+        color4(0.75f, 0.70f, 0.62f, 1.0f)
+    );
 
-    drawCube(x + 0.30f, 1.50f, z - 0.12f,
-        0.35f, 0.20f, 0.35f,
-        greenColor());
+    drawCubeModel(
+        plant *
+        Translate(0.0f, 0.42f, 0.0f) *
+        Scale(0.45f, 0.36f, 0.45f),
+        creamPot()
+    );
 
+    drawCubeModel(
+        plant *
+        Translate(0.0f, 0.62f, 0.0f) *
+        Scale(0.55f, 0.08f, 0.55f),
+        color4(0.88f, 0.82f, 0.72f, 1.0f)
+    );
 
-    // ===== Tán lá trên =====
-    drawCube(x, 1.78f, z,
-        0.65f, 0.24f, 0.45f,
-        color4(0.16f, 0.55f, 0.20f, 1.0f));
+    drawCubeModel(
+        plant *
+        Translate(0.0f, 0.66f, 0.0f) *
+        Scale(0.42f, 0.05f, 0.42f),
+        color4(0.20f, 0.12f, 0.06f, 1.0f)
+    );
 
+    // Thân cây 
+
+    mat4 trunk =
+        plant *
+        Translate(0.0f, 1.05f, 0.0f);
+
+    drawCubeModel(
+        trunk *
+        Scale(0.14f, 0.90f, 0.14f),
+        color4(0.42f, 0.24f, 0.10f, 1.0f)
+    );
+
+    // Tán dưới 
+
+    mat4 lowerCrown =
+        plant *
+        Translate(0.0f, 1.30f, 0.0f);
+
+    drawCubeModel(
+        lowerCrown *
+        Scale(1.00f, 0.28f, 0.60f),
+        greenColor2()
+    );
+
+    drawCubeModel(
+        lowerCrown *
+        Translate(-0.45f, -0.08f, 0.0f) *
+        Scale(0.40f, 0.24f, 0.40f),
+        greenColor()
+    );
+
+    drawCubeModel(
+        lowerCrown *
+        Translate(0.45f, -0.08f, 0.0f) *
+        Scale(0.40f, 0.24f, 0.40f),
+        greenColor()
+    );
+
+    drawCubeModel(
+        lowerCrown *
+        Translate(0.0f, -0.08f, -0.42f) *
+        Scale(0.40f, 0.24f, 0.40f),
+        greenColor()
+    );
+
+    drawCubeModel(
+        lowerCrown *
+        Translate(0.0f, -0.08f, 0.42f) *
+        Scale(0.40f, 0.24f, 0.40f),
+        greenColor()
+    );
+
+    // ===== Tán giữa =====
+
+    mat4 middleCrown =
+        plant *
+        Translate(0.0f, 1.55f, 0.0f);
+
+    drawCubeModel(
+        middleCrown *
+        Scale(0.85f, 0.26f, 0.55f),
+        greenColor2()
+    );
+
+    drawCubeModel(
+        middleCrown *
+        Translate(-0.30f, -0.05f, 0.12f) *
+        Scale(0.35f, 0.20f, 0.35f),
+        greenColor()
+    );
+
+    drawCubeModel(
+        middleCrown *
+        Translate(0.30f, -0.05f, -0.12f) *
+        Scale(0.35f, 0.20f, 0.35f),
+        greenColor()
+    );
+
+    // ===== Tán trên =====
+
+    mat4 upperCrown =
+        plant *
+        Translate(0.0f, 1.78f, 0.0f);
+
+    drawCubeModel(
+        upperCrown *
+        Scale(0.65f, 0.24f, 0.45f),
+        color4(0.16f, 0.55f, 0.20f, 1.0f)
+    );
 
     // ===== Đỉnh =====
-    drawCube(x, 1.95f, z,
-        0.38f, 0.18f, 0.28f,
-        color4(0.20f, 0.65f, 0.24f, 1.0f));
+
+    drawCubeModel(
+        plant *
+        Translate(0.0f, 1.95f, 0.0f) *
+        Scale(0.38f, 0.18f, 0.28f),
+        color4(0.20f, 0.65f, 0.24f, 1.0f)
+    );
 }
 
 // ======================= TRANG TRI THEM =======================
@@ -1440,4 +1553,4 @@ int main(int argc, char** argv)
 
     glutMainLoop();
     return 0;
-}//
+}
