@@ -425,26 +425,28 @@ void drawCurtainSwitch()
 
 void drawDoor()
 {
+    // BUOC 1: Ve khung cua co dinh tren tuong
     drawCube(9.95f, 1.6f, 5.55f, 0.15f, 3.2f, 0.15f, darkWood());
     drawCube(9.95f, 1.6f, 7.25f, 0.15f, 3.2f, 0.15f, darkWood());
     drawCube(9.95f, 3.2f, 6.40f, 0.15f, 0.15f, 1.85f, darkWood());
 
-    mat4 model =
+    // BUOC 2: Thiet lap ma tran dynamic cho canh cua va ve canh cua
+    mat4 doorTransform =
         Translate(9.90f, 1.55f, 5.55f) *
         RotateY(-doorAngle) *
-        Translate(0.0f, 0.0f, 0.85f) *
-        Scale(0.12f, 3.0f, 1.70f);
+        Translate(0.0f, 0.0f, 0.85f);
 
-    drawCubeModel(model, color4(0.48f, 0.28f, 0.14f, 1.0f));
+    mat4 doorModel = doorTransform * Scale(0.12f, 3.0f, 1.70f);
+    drawCubeModel(doorModel, color4(0.48f, 0.28f, 0.14f, 1.0f));
 
-    mat4 knob =
-        Translate(9.72f, 1.55f, 6.92f) *
-        RotateY(-doorAngle) *
+    // BUOC 3: Ve tay nam cua ke thua ma tran de khong bi lo lung
+    mat4 knobModel =
+        doorTransform *
+        Translate(-0.10f, 0.0f, 0.52f) *
         Scale(0.10f, 0.14f, 0.14f);
 
-    drawCubeModel(knob, color4(0.90f, 0.82f, 0.55f, 1.0f));
+    drawCubeModel(knobModel, color4(0.90f, 0.82f, 0.55f, 1.0f));
 }
-
 // ======================= SOFA  =======================
 
 void drawSofa()
@@ -1237,7 +1239,7 @@ void interact()
         break;
 
     case TARGET_CLOCK:
-        gameHour += 1.0f;
+        gameHour += 0.5f;
         if (gameHour >= 24.0f) gameHour = 0.0f;
         updateDayNight();
         break;
@@ -1473,14 +1475,14 @@ void keyboardDown(unsigned char key, int x, int y)
 
     case 'c':
     case 'C':
-        gameHour += 1.0f;
+        gameHour += 0.5f;
         if (gameHour >= 24.0f) gameHour = 0.0f;
         updateDayNight();
         break;
 
     case 'v':
     case 'V':
-        gameHour -= 1.0f;
+        gameHour -= 0.5f;
         if (gameHour < 0.0f) gameHour = 23.0f;
         updateDayNight();
         break;
