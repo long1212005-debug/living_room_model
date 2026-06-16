@@ -1239,7 +1239,7 @@ void interact()
         break;
 
     case TARGET_CLOCK:
-        gameHour += 0.5f;
+        gameHour += 1.0f;
         if (gameHour >= 24.0f) gameHour = 0.0f;
         updateDayNight();
         break;
@@ -1475,14 +1475,14 @@ void keyboardDown(unsigned char key, int x, int y)
 
     case 'c':
     case 'C':
-        gameHour += 0.5f;
+        gameHour += 1.0f;
         if (gameHour >= 24.0f) gameHour = 0.0f;
         updateDayNight();
         break;
 
     case 'v':
     case 'V':
-        gameHour -= 0.5f;
+        gameHour -= 1.0f;
         if (gameHour < 0.0f) gameHour = 23.0f;
         updateDayNight();
         break;
